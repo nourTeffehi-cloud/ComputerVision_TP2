@@ -38,9 +38,7 @@ class DesignWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.img_gray = None
 
-    # ------------------------------
-    # Fonction générique d'affichage
-    # ------------------------------
+    
     def makeFigure(self, target_label, image):
         if isinstance(image, str):
             img = cv2.imread(image, cv2.IMREAD_GRAYSCALE)
@@ -128,9 +126,7 @@ class DesignWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         cv2.imwrite("Filtered_Image.png", filt)
         self.makeFigure(self.label_12, filt)
 
-    # ------------------------------
-    # Opérations géométriques
-    # ------------------------------
+    
     def show_ImgAugmented(self):
         if self.img_gray is None:
             return
@@ -167,9 +163,7 @@ class DesignWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.makeFigure(self.label_14, aug)
 
 
-# ------------------------------
-# Lancer application
-# ------------------------------
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = DesignWindow()
